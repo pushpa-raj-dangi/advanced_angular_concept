@@ -6,6 +6,7 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 export class MyForDirective {
   @Input()
   set myForOf(collection: any) {
+    this.view.clear();
     collection.forEach((item: any, index: any) => {
       this.view.createEmbeddedView(this.template, {
         $implicit: item,

@@ -8,4 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class AppComponent {
   items = [{ name: 'hari' }, { name: 'gopal' }];
+
+  constructor() {
+    setTimeout(() => {
+      this.items = [...this.items, { name: 'ramit' }];
+    }, 2000);
+  }
 }
