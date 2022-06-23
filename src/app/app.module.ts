@@ -9,8 +9,14 @@ import { AuthRememberComponent } from './auth-form/auth-remember/auth-remember.c
 import { AuthMessageComponent } from './auth-form/auth-message/auth-message.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthFormComponent, AuthRememberComponent, AuthMessageComponent],
+  declarations: [
+    AppComponent,
+    AuthFormComponent,
+    AuthRememberComponent,
+    AuthMessageComponent,
+  ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
+  entryComponents: [AuthFormComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

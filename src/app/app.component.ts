@@ -1,5 +1,7 @@
+import { AuthFormComponent } from './auth-form/auth-form.component';
 import {
   AfterContentInit,
+  AfterViewInit,
   Component,
   ComponentFactoryResolver,
   ViewChild,
@@ -11,15 +13,23 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterContentInit {
+export class AppComponent implements AfterContentInit, AfterViewInit {
   title = 'content-projection';
   user: any;
 
   @ViewChild('entry', { read: ViewContainerRef }) entry!: ViewContainerRef;
 
   constructor(private resolver: ComponentFactoryResolver) {}
+
   ngAfterContentInit(): void {
-    throw new Error('Method not implemented.');
+    // const authFormFactory =
+    //   this.resolver.resolveComponentFactory(AuthFormComponent);
+    // const component = this.entry.createComponent(authFormFactory);
+  }
+  ngAfterViewInit() {
+    const authFormFactory =
+      this.resolver.resolveComponentFactory(AuthFormComponent);
+    const component = this.entry.createComponent(authFormFactory);
   }
 
   rememberUser(e: any) {
