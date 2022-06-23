@@ -34,7 +34,7 @@ export class AuthFormComponent implements OnInit, AfterViewInit {
 
   @ViewChild('email') email!: ElementRef;
 
-  constructor(private cd: ChangeDetectorRef, private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
     this.renderer.setAttribute(
@@ -49,7 +49,6 @@ export class AuthFormComponent implements OnInit, AfterViewInit {
       console.log('focused');
     });
     this.renderer.selectRootElement(this.email.nativeElement).focus();
-    this.renderer.selectRootElement(this.email.nativeElement).blur();
   }
 
   ngOnInit(): void {}

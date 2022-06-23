@@ -26,6 +26,7 @@ export class AppComponent implements AfterViewInit {
       this.resolver.resolveComponentFactory(AuthFormComponent);
     const component = this.entry.createComponent(authFormFactory);
     component.instance.title = 'Create Account';
+    component.instance.user.subscribe(this.createUser);
   }
 
   rememberUser(e: any) {
@@ -33,10 +34,13 @@ export class AppComponent implements AfterViewInit {
   }
 
   createUser(user: any) {
+    console.log(this.user);
     this.user = user;
   }
 
   login(user: any) {
+    console.log(this.user);
+
     this.user = user;
   }
 }
