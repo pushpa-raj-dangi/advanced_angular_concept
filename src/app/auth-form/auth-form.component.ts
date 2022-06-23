@@ -23,7 +23,7 @@ import { ChangeDetectionStrategy } from '@angular/compiler';
   templateUrl: './auth-form.component.html',
   styleUrls: ['./auth-form.component.scss'],
 })
-export class AuthFormComponent implements OnInit, AfterViewInit {
+export class AuthFormComponent implements OnInit {
   title = 'login';
 
   @ViewChildren(AuthMessageComponent) message!: QueryList<AuthMessageComponent>;
@@ -35,21 +35,6 @@ export class AuthFormComponent implements OnInit, AfterViewInit {
   @ViewChild('email') email!: ElementRef;
 
   constructor(private renderer: Renderer2) {}
-
-  ngAfterViewInit(): void {
-    this.renderer.setAttribute(
-      this.email.nativeElement,
-      'placeholder',
-      'Enter your email'
-    );
-
-    this.renderer.addClass(this.email.nativeElement, 'form-control');
-    this.renderer.setValue(this.email.nativeElement, 'hello@gmail.com');
-    this.renderer.listen(this.email.nativeElement, 'focus', () => {
-      console.log('focused');
-    });
-    this.renderer.selectRootElement(this.email.nativeElement).focus();
-  }
 
   ngOnInit(): void {}
 
