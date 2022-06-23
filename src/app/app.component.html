@@ -1,6 +1,6 @@
-<ng-container [ngTemplateOutlet]="tmpl">
+<ng-container [ngTemplateOutlet]="tmpl" [ngTemplateOutletContext]="ctx">
 </ng-container>
 <div #entry></div>
 <ng-template #tmpl let-name let-location="location">
-  Name : Pushpa
+  {{name}} : {{location}}
 </ng-template>
