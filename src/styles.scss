@@ -9,3 +9,11 @@ button {
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
+.tooltip {
+  display: none;
+}
+
+.tooltip-active {
+  display: block;
+}

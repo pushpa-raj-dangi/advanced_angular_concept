@@ -11,6 +11,7 @@ import { ExampleOneComponent } from './example-one/example-one.component';
 import { ExampleTwoComponent } from './example-two/example-two.component';
 import { ExampleThreeComponent } from './example-three/example-three.component';
 import { CreditCardDirective } from './directives/credit-card.directive';
+import { ToolTipDirective } from './directives/tool-tip.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CreditCardDirective } from './directives/credit-card.directive';
     ExampleTwoComponent,
     ExampleThreeComponent,
     CreditCardDirective,
+    ToolTipDirective,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   entryComponents: [AuthFormComponent],

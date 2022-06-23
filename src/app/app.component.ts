@@ -6,9 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  ctx = {
-    $implicit: 'Pushpa DC',
-    location: 'Kathmandu,Nepal',
-  };
-}
+export class AppComponent {}
