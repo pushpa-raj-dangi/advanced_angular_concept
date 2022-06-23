@@ -14,7 +14,7 @@ import {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements AfterViewInit {
-  title = 'content-projection';
+  title = 'login';
   user: any;
 
   @ViewChild('entry', { read: ViewContainerRef }) entry!: ViewContainerRef;
@@ -25,9 +25,7 @@ export class AppComponent implements AfterViewInit {
     const authFormFactory =
       this.resolver.resolveComponentFactory(AuthFormComponent);
     const component = this.entry.createComponent(authFormFactory);
-    //we can create multiple component like this
-    const component1 = this.entry.createComponent(authFormFactory);
-    const component2 = this.entry.createComponent(authFormFactory);
+    component.instance.title = 'Create Account';
   }
 
   rememberUser(e: any) {

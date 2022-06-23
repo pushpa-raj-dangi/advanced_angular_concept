@@ -1,16 +1,16 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form.value)"
   style="border: 1px solid #ddd;width:200px;padding:20px;margin:20px">
-  <ng-content select="h3"></ng-content>
+  <div style="text-align:center">
+    {{title}}
+  </div>
   <label>Email
     <input type="email" name="email" #email ngModel>
   </label>
   <label>Password
     <input type="password" name="password" ngModel>
   </label>
-  <ng-content select="app-auth-remember"></ng-content>
-  <app-auth-message [style.display]="(showMessage ? 'inherit':'none')">
-
-  </app-auth-message>
-  <ng-content select="button"></ng-content>
+  <button>
+    {{title}}
+  </button>
 
 </form>

@@ -23,9 +23,9 @@ import { ChangeDetectionStrategy } from '@angular/compiler';
   templateUrl: './auth-form.component.html',
   styleUrls: ['./auth-form.component.scss'],
 })
-export class AuthFormComponent
-  implements OnInit, AfterContentInit, AfterViewInit
-{
+export class AuthFormComponent implements OnInit, AfterViewInit {
+  title = 'login';
+
   @ViewChildren(AuthMessageComponent) message!: QueryList<AuthMessageComponent>;
 
   @Output() user: EventEmitter<any> = new EventEmitter();
@@ -33,9 +33,6 @@ export class AuthFormComponent
   showMessage: boolean = false;
 
   @ViewChild('email') email!: ElementRef;
-
-  @ContentChildren(AuthRememberComponent)
-  remember!: QueryList<AuthRememberComponent>;
 
   constructor(private cd: ChangeDetectorRef, private renderer: Renderer2) {}
 
@@ -53,33 +50,9 @@ export class AuthFormComponent
     });
     this.renderer.selectRootElement(this.email.nativeElement).focus();
     this.renderer.selectRootElement(this.email.nativeElement).blur();
-    // this.email.nativeElement.setAttribute(
-    //   'placeholder',
-    //   'Enter your email address'
-    // );
-
-    // this.email.nativeElement.classList.add('email');
-    // this.email.nativeElement.focus();
-
-    if (this.message) {
-      this.message.forEach((message) => {
-        message.days = 39;
-      });
-      this.cd.detectChanges();
-    }
   }
 
   ngOnInit(): void {}
-
-  ngAfterContentInit(): void {
-    if (this.remember) {
-      this.remember.forEach((item) => {
-        item.checked.subscribe(
-          (checked: boolean) => (this.showMessage = checked)
-        );
-      });
-    }
-  }
 
   onSubmit(form: any) {
     this.user.emit(form);
