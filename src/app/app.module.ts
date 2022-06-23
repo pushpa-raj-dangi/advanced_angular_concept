@@ -12,6 +12,7 @@ import { ExampleTwoComponent } from './example-two/example-two.component';
 import { ExampleThreeComponent } from './example-three/example-three.component';
 import { CreditCardDirective } from './directives/credit-card.directive';
 import { ToolTipDirective } from './directives/tool-tip.directive';
+import { MyForDirective } from './directives/my-for.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ToolTipDirective } from './directives/tool-tip.directive';
     ExampleThreeComponent,
     CreditCardDirective,
     ToolTipDirective,
+    MyForDirective,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   entryComponents: [AuthFormComponent],
