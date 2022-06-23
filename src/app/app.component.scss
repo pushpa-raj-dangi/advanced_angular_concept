@@ -1,4 +1,18 @@
 div {
   display: flex;
   justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+input {
+  height: 30px;
+  border: 1px solid #ddd;
+  width: 400px;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+input:focus {
+  outline: 0px !important;
 }

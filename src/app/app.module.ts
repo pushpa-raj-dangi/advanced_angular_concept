@@ -10,6 +10,7 @@ import { AuthMessageComponent } from './auth-form/auth-message/auth-message.comp
 import { ExampleOneComponent } from './example-one/example-one.component';
 import { ExampleTwoComponent } from './example-two/example-two.component';
 import { ExampleThreeComponent } from './example-three/example-three.component';
+import { CreditCardDirective } from './directives/credit-card.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ExampleThreeComponent } from './example-three/example-three.component';
     ExampleOneComponent,
     ExampleTwoComponent,
     ExampleThreeComponent,
+    CreditCardDirective,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   entryComponents: [AuthFormComponent],
