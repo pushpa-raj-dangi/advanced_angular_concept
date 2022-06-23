@@ -1,18 +1,25 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FileSizePipe } from './pipes/filesize.pipe';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [FileSizePipe],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   items = [{ name: 'hari' }, { name: 'gopal' }];
   files = [{ name: 'logo.svg', size: 12343434 }];
+  mapped!: any[];
 
-  constructor() {
-    setTimeout(() => {
-      this.items = [...this.items, { name: 'ramit' }];
-    }, 2000);
+  constructor(private fileSizePipe: FileSizePipe) {}
+
+  ngOnInit(): void {
+    this.mapped = this.files.map((file) => {
+      return {
+        name: file.name,
+        size: this.fileSizePipe.transform(file.size, 'GB'),
+      };
+    });
   }
 }
