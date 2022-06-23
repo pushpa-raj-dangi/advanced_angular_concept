@@ -13,7 +13,7 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterContentInit, AfterViewInit {
+export class AppComponent implements AfterViewInit {
   title = 'content-projection';
   user: any;
 
@@ -21,15 +21,13 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
 
   constructor(private resolver: ComponentFactoryResolver) {}
 
-  ngAfterContentInit(): void {
-    // const authFormFactory =
-    //   this.resolver.resolveComponentFactory(AuthFormComponent);
-    // const component = this.entry.createComponent(authFormFactory);
-  }
   ngAfterViewInit() {
     const authFormFactory =
       this.resolver.resolveComponentFactory(AuthFormComponent);
     const component = this.entry.createComponent(authFormFactory);
+    //we can create multiple component like this
+    const component1 = this.entry.createComponent(authFormFactory);
+    const component2 = this.entry.createComponent(authFormFactory);
   }
 
   rememberUser(e: any) {
