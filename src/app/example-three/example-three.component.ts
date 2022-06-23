@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-example-three',
   templateUrl: './example-three.component.html',
-  styleUrls: ['./example-three.component.scss']
+  encapsulation: ViewEncapsulation.Emulated,
+  styleUrls: ['./example-three.component.scss'],
 })
 export class ExampleThreeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
