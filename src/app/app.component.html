@@ -8,6 +8,10 @@
     <input type="text">
   </label>
 </div>
+<ul>
+
+  <li *ngFor="let file of files">{{file.size | filesize}}</li>
+</ul>
 
 
 <div>

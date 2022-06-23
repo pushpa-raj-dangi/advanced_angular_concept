@@ -8,6 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class AppComponent {
   items = [{ name: 'hari' }, { name: 'gopal' }];
+  files = [{ name: 'logo.svg', size: 12343434 }];
 
   constructor() {
     setTimeout(() => {

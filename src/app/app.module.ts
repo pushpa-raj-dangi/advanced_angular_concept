@@ -1,3 +1,4 @@
+import { FileSizePipe } from './pipes/filesize.pipe';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +14,7 @@ import { ExampleThreeComponent } from './example-three/example-three.component';
 import { CreditCardDirective } from './directives/credit-card.directive';
 import { ToolTipDirective } from './directives/tool-tip.directive';
 import { MyForDirective } from './directives/my-for.directive';
+import { TestpPipe } from './pipes/testp.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { MyForDirective } from './directives/my-for.directive';
     CreditCardDirective,
     ToolTipDirective,
     MyForDirective,
+    TestpPipe,
+    FileSizePipe,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   entryComponents: [AuthFormComponent],
