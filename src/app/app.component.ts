@@ -27,7 +27,10 @@ export class AppComponent implements AfterViewInit {
   constructor() {}
 
   ngAfterViewInit(): void {
-    this.entry.createEmbeddedView(this.tmpl);
+    this.entry.createEmbeddedView(this.tmpl, {
+      $implicit: 'Pushpa Raj Dangi',
+      location: 'Kathmandu Nepal',
+    });
   }
 
   login(user: any) {
