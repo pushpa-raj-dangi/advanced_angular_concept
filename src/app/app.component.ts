@@ -5,6 +5,7 @@ import {
   Component,
   ComponentFactoryResolver,
   ComponentRef,
+  TemplateRef,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
@@ -21,38 +22,16 @@ export class AppComponent implements AfterViewInit {
   component!: ComponentRef<AuthFormComponent>;
 
   @ViewChild('entry', { read: ViewContainerRef }) entry!: ViewContainerRef;
+  @ViewChild('tmpl') tmpl!: TemplateRef<any>;
 
-  constructor(private resolver: ComponentFactoryResolver) {}
+  constructor() {}
 
-  ngAfterViewInit() {
-    const authFormFactory =
-      this.resolver.resolveComponentFactory(AuthFormComponent);
-    this.entry.createComponent(authFormFactory);
-    this.component = this.entry.createComponent(authFormFactory, 0);
-    this.component.instance.title = 'Create Account';
-    this.component.instance.user.subscribe(this.login);
-  }
-
-  rememberUser(e: any) {
-    console.log(e);
-  }
-
-  destroyComponent() {
-    this.component.destroy();
-  }
-
-  reOrderComponent() {
-    this.entry.move(this.component.hostView, 1);
-  }
-
-  createUser(user: any) {
-    console.log(this.user);
-    this.user = user;
+  ngAfterViewInit(): void {
+    this.entry.createEmbeddedView(this.tmpl);
   }
 
   login(user: any) {
     console.log(this.user);
-
     this.user = user;
   }
 }
