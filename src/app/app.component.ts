@@ -27,7 +27,8 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     const authFormFactory =
       this.resolver.resolveComponentFactory(AuthFormComponent);
-    this.component = this.entry.createComponent(authFormFactory);
+    this.entry.createComponent(authFormFactory);
+    this.component = this.entry.createComponent(authFormFactory, 0);
     this.component.instance.title = 'Create Account';
     this.component.instance.user.subscribe(this.login);
   }
@@ -38,6 +39,10 @@ export class AppComponent implements AfterViewInit {
 
   destroyComponent() {
     this.component.destroy();
+  }
+
+  reOrderComponent() {
+    this.entry.move(this.component.hostView, 1);
   }
 
   createUser(user: any) {
