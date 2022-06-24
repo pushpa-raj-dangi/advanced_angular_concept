@@ -5,7 +5,12 @@ import { Component, Input } from '@angular/core';
   selector: 'stock-branch',
   template: `<div [formGroup]="parent">
     <div formGroupName="store">
-      <input type="text" placeholder="Brand Id" formControlName="branch" />
+      <input
+        type="text"
+        placeholder="Brand Id"
+        class="form-control"
+        formControlName="branch"
+      />
       <div *ngIf="required('branch')" class="alert alert-danger">
         Branch Id is requred.
       </div>
@@ -14,7 +19,12 @@ import { Component, Input } from '@angular/core';
       <div *ngIf="invalid" class="alert alert-danger">
         Invalid branch code:1 letter and 3 numbers
       </div>
-      <input type="text" placeholder="Manager Code" formControlName="code" />
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Manager Code"
+        formControlName="code"
+      />
       <div *ngIf="required('code')" class="alert alert-danger">
         Branch code is required.
       </div>

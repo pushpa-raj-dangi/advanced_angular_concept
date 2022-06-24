@@ -16,6 +16,7 @@ import { CreditCardDirective } from './directives/credit-card.directive';
 import { ToolTipDirective } from './directives/tool-tip.directive';
 import { MyForDirective } from './directives/my-for.directive';
 import { TestpPipe } from './pipes/testp.pipe';
+import { MainAppComponent } from './mail/components/main-app/main-app.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TestpPipe } from './pipes/testp.pipe';
     MyForDirective,
     TestpPipe,
     FileSizePipe,
+    MainAppComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, StockInventoryModule],
   entryComponents: [AuthFormComponent],
