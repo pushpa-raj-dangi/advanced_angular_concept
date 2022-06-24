@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 button {
   border: 0px solid #fff;
   padding: 10px 25px;
   color: #fff;
-  background-color: rgb(25, 25, 164);
+  background-color: rgb(18, 18, 81);
+  border-radius: 5px;
+  margin: 10px 0px;
 }
 
 body {
@@ -16,4 +20,25 @@ body {
 
 .tooltip-active {
   display: block;
+}
+
+input,
+select {
+  height: 30px;
+  border: 1px solid #ddd;
+  display: flex;
+  margin: 15px 15px;
+  width: 200px;
+  padding: 5px;
+}
+select {
+  height: 44px;
+}
+.d-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-danger {
+  background-color: red;
 }

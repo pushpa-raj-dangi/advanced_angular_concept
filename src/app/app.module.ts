@@ -1,3 +1,4 @@
+import { StockInventoryModule } from './stock-inventory/stock-inventory.module';
 import { FileSizePipe } from './pipes/filesize.pipe';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -31,7 +32,7 @@ import { TestpPipe } from './pipes/testp.pipe';
     TestpPipe,
     FileSizePipe,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, StockInventoryModule],
   entryComponents: [AuthFormComponent],
   providers: [],
   bootstrap: [AppComponent],

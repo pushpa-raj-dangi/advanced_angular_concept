@@ -1,0 +1,35 @@
+.focused {
+  box-shadow: 0 0 0 2px #0070f3;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 65px;
+  justify-content: space-between;
+  background: #a3eff7;
+  height: 30px;
+  border-radius: 2px;
+  margin: 0px 5px;
+  padding: 5px 0px;
+  p {
+    padding: 10px;
+  }
+  button {
+    height: 18px;
+    width: 18px;
+    padding: 0px;
+    background-color: #1baa1b;
+    margin: 3px 0px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &:disabled,
+    &[disabled] {
+      background-color: #cccccc;
+      color: #666666;
+      pointer-events: none;
+    }
+  }
+}
