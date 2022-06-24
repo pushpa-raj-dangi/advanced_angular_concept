@@ -9,6 +9,7 @@ import { Component, Input } from '@angular/core';
       <div *ngIf="required('branch')" class="alert alert-danger">
         Branch Id is requred.
       </div>
+      <div *ngIf="unknown" class="alert alert-danger">Unknown branch</div>
 
       <div *ngIf="invalid" class="alert alert-danger">
         Invalid branch code:1 letter and 3 numbers
@@ -30,6 +31,13 @@ export class StockBranchComponent {
       this.parent.get('store.branch')?.hasError('invalidBranch') &&
       this.parent.get('store.branch')?.dirty &&
       !this.required('branch')
+    );
+  }
+
+  get unknown() {
+    return (
+      this.parent.get('store.branch')?.hasError('unknownBranch') &&
+      this.parent.get('store.branch')?.dirty
     );
   }
 

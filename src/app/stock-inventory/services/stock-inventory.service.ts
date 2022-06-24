@@ -19,4 +19,10 @@ export class StockInventoryService {
       .get('http://localhost:3000/prducts')
       .pipe(map((response: any) => response));
   }
+  checkBranchId(id: string): Observable<boolean> {
+    return this.http
+      .get(`http://localhost:3000/branches?name=${id}`)
+      .pipe(map((response: any) => response))
+      .pipe(map((x: any[]) => !!x.length));
+  }
 }

@@ -1,7 +1,15 @@
 import { Item } from './../models/product.interface';
-import { forkJoin } from 'rxjs';
+import { forkJoin, map } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  AsyncValidator,
+  AsyncValidatorFn,
+} from '@angular/forms';
 import { Product } from '../models/product.interface';
 import { StockInventoryService } from '../services/stock-inventory.service';
 import { StockValidators } from './stock-inventory.validators';
@@ -43,15 +51,22 @@ export class StockInventoryComponent implements OnInit {
 
   productMap!: Map<number, Product>;
 
-  form = this.fb.group({
-    store: this.fb.group({
-      branch: ['', [Validators.required, StockValidators.checkBranch]],
-      code: ['', Validators.required],
-    }),
-    selector: this.createStock({}),
+  form = this.fb.group(
+    {
+      store: this.fb.group({
+        branch: [
+          '',
+          [Validators.required, StockValidators.checkBranch],
+          [this.validateBranch.bind(this)],
+        ],
+        code: ['', Validators.required],
+      }),
+      selector: this.createStock({}),
 
-    stock: this.fb.array([]),
-  });
+      stock: this.fb.array([]),
+    },
+    { validators: StockValidators.checkStockExists }
+  );
   total!: number;
 
   constructor(
@@ -90,6 +105,16 @@ export class StockInventoryComponent implements OnInit {
       product_id: parseInt(stock.product_id, 10) || '',
       quantity: stock.quantity || 10,
     });
+  }
+
+  validateBranch(control: AbstractControl) {
+    console.log(control.value);
+
+    return this.stockService.checkBranchId(control.value).pipe(
+      map((x: any) => {
+        return x ? null : { unknownBranch: true };
+      })
+    );
   }
 
   addStock(stock: any) {
