@@ -1,0 +1,16 @@
+<div class="p-3">
+  <ol class="list-group">
+    <a [routerLink]="['/mail',{outlets:{pane:['message',message.id]}}]" routerLinkActive="active"
+      class="list-group-item list-group-item-action">
+      <div class="ms-2 me-auto">
+        <h5 class="fw-bold">{{message.from}}</h5>
+        <div class="fw-bold">{{message.summary}}</div>
+        <div class="fw-bold"><span class="text-muted badge border border-danger">{{message.folder}}</span></div>
+
+      </div>
+      <span class="badge text-dark rounded-pill">{{message.timestamp|date}}</span>
+    </a>
+
+  </ol>
+
+</div>

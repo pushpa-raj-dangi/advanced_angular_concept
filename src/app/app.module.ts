@@ -1,5 +1,8 @@
+import { AuthGuard } from './auth/auth.guard';
+import { AuthModule } from './auth/auth.module';
+import { Routes, RouterModule } from '@angular/router';
+import { MailModule } from './mail/mail.module';
 import { StockInventoryModule } from './stock-inventory/stock-inventory.module';
-import { FileSizePipe } from './pipes/filesize.pipe';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,8 +18,20 @@ import { ExampleThreeComponent } from './example-three/example-three.component';
 import { CreditCardDirective } from './directives/credit-card.directive';
 import { ToolTipDirective } from './directives/tool-tip.directive';
 import { MyForDirective } from './directives/my-for.directive';
-import { TestpPipe } from './pipes/testp.pipe';
-import { MainAppComponent } from './mail/components/main-app/main-app.component';
+import { AuthService } from './auth/auth.service';
+
+export const ROUTES: Routes = [
+  {
+    path: 'dashboard',
+    canLoad: [AuthGuard],
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  {
+    path: '**',
+    redirectTo: 'mail/folder/inbox',
+  },
+];
 
 @NgModule({
   declarations: [
@@ -30,11 +45,16 @@ import { MainAppComponent } from './mail/components/main-app/main-app.component'
     CreditCardDirective,
     ToolTipDirective,
     MyForDirective,
-    TestpPipe,
-    FileSizePipe,
-    MainAppComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, StockInventoryModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    StockInventoryModule,
+    MailModule,
+    AuthModule,
+    RouterModule.forRoot(ROUTES),
+  ],
   entryComponents: [AuthFormComponent],
   providers: [],
   bootstrap: [AppComponent],

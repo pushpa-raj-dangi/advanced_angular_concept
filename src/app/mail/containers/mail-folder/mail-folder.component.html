@@ -1,0 +1,7 @@
+<div class="p-3">
+  <h1>{{title | titlecase}}</h1>
+</div>
+<div style="height:80vh;overflow-y:scroll ;">
+  <app-mail-item *ngFor="let item of data.messages " [message]="item"></app-mail-item>
+
+</div>

@@ -16,5 +16,50 @@
     { "id": 2, "name": "C112" },
     { "id": 3, "name": "D132" },
     { "id": 4, "name": "A132" }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "folder": "inbox",
+      "from": "Jane Smith",
+      "summary": "pariatur dolor architecto cum quae saepe dicta illum molestias reprehenderit ",
+      "timestamp": 15878481622905
+    },
+
+    {
+      "id": 2,
+      "folder": "inbox",
+      "from": "Ram DC",
+      "summary": "pariatur dolor architecto cum quae saepe dicta illum molestias reprehenderit ",
+      "timestamp": 15878481622905
+    },
+    {
+      "id": 3,
+      "folder": "inbox",
+      "from": "Marray Du",
+      "summary": "pariatur dolor architecto cum quae saepe dicta illum molestias reprehenderit ",
+      "timestamp": 11878481622905
+    },
+    {
+      "id": 4,
+      "folder": "trash",
+      "from": "John Doe",
+      "summary": "pariatur dolor architecto cum quae saepe dicta illum molestias reprehenderit ",
+      "timestamp": 14278481622905
+    },
+    {
+      "id": 5,
+      "folder": "inbox",
+      "from": "Shyam NU",
+      "summary": "pariatur dolor architecto cum quae saepe dicta illum molestias reprehenderit ",
+      "timestamp": 14878481632905
+    },
+    {
+      "id": 6,
+      "folder": "trash",
+      "from": "Ramba Kume",
+      "summary": "pariatur dolor architecto cum quae saepe dicta illum molestias reprehenderit ",
+      "timestamp": 19878481622905
+    }
   ]
 }

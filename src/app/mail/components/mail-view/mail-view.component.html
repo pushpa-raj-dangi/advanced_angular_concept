@@ -1,0 +1,16 @@
+<ol class="list-group justify-content-between h-100">
+  <a class="list-group-item list-group-item-action">
+    <div class="ms-2 me-auto">
+      <h5 class="fw-bold">{{message.from}}</h5>
+      <div class="fw-bold">{{message.summary}}</div>
+      <div class="fw-bold"><span class="text-muted badge border border-danger">{{message.folder}}</span></div>
+
+    </div>
+    <span class="badge text-dark rounded-pill">{{message.timestamp}}</span>
+  </a>
+  <div>
+    <textarea class="form-control mt-4" cols="2" rows="2" placeholder="Type your reply..."></textarea>
+    <button>Send</button>
+  </div>
+
+</ol>
