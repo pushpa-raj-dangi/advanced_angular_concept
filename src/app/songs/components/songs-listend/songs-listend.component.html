@@ -1,0 +1,3 @@
+<song-list [list]="listenedSong$ | async" (toggle)=" toggle($event)">
+  Listened {{ (listenedSong$ | async)!.length}}
+</song-list>

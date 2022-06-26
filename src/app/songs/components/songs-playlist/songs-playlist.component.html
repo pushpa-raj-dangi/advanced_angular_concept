@@ -1,0 +1,4 @@
+<song-list [list]="(playlist$ | async)" (toggle)="toggle($event)">
+  Playlist
+  {{ (playlist$ | async)?.length}}
+</song-list>

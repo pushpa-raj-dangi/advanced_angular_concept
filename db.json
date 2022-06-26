@@ -1,21 +1,62 @@
 {
   "cart": [
-    { "product_id": 1, "quantity": 20 },
-    { "product_id": 2, "quantity": 50 },
-    { "product_id": 3, "quantity": 110 }
+    {
+      "product_id": 1,
+      "quantity": 20
+    },
+    {
+      "product_id": 2,
+      "quantity": 50
+    },
+    {
+      "product_id": 3,
+      "quantity": 110
+    }
   ],
   "prducts": [
-    { "id": 1, "price": 290, "name": "Mack Book Pro" },
-    { "id": 2, "price": 390, "name": "USB-C Adaptor" },
-    { "id": 3, "price": 450, "name": "iPod" },
-    { "id": 4, "price": 500, "name": "iPhone" },
-    { "id": 5, "price": 2900, "name": "Apple Watch" }
+    {
+      "id": 1,
+      "price": 290,
+      "name": "Mack Book Pro"
+    },
+    {
+      "id": 2,
+      "price": 390,
+      "name": "USB-C Adaptor"
+    },
+    {
+      "id": 3,
+      "price": 450,
+      "name": "iPod"
+    },
+    {
+      "id": 4,
+      "price": 500,
+      "name": "iPhone"
+    },
+    {
+      "id": 5,
+      "price": 2900,
+      "name": "Apple Watch"
+    }
   ],
   "branches": [
-    { "id": 1, "name": "B102" },
-    { "id": 2, "name": "C112" },
-    { "id": 3, "name": "D132" },
-    { "id": 4, "name": "A132" }
+    {
+      "id": 1,
+      "name": "B102"
+    },
+    {
+      "id": 2,
+      "name": "C112"
+    },
+    {
+      "id": 3,
+      "name": "D132"
+    },
+    {
+      "id": 4,
+      "name": "A132"
+    }
   ],
   "messages": [
     {
@@ -25,7 +66,6 @@
       "summary": "pariatur dolor architecto cum quae saepe dicta illum molestias reprehenderit ",
       "timestamp": 15878481622905
     },
-
     {
       "id": 2,
       "folder": "inbox",
@@ -60,6 +100,36 @@
       "from": "Ramba Kume",
       "summary": "pariatur dolor architecto cum quae saepe dicta illum molestias reprehenderit ",
       "timestamp": 19878481622905
+    }
+  ],
+  "playlist": [
+    {
+      "id": 1,
+      "artist": "A.R. Rahman",
+      "title": "A.R. Rahman",
+      "album": "A.R. Rahman",
+      "duration": "3:00",
+      "genre": "Pop",
+      "year": "2018",
+      "listened": false,
+      "favorite": true
+    },
+    {
+      "id": 2,
+      "artist": "Nayran Gopal",
+      "title": "Kei mitha bat gara",
+      "album": "Kei mitha bat gara",
+      "duration": "3:00",
+      "listened": true,
+      "favorite": true
+    },
+    {
+      "id": 3,
+      "artist": "Shirish",
+      "title": "Yo mero man",
+      "album": "Jyotis",
+      "listened": false,
+      "favorite": true
     }
   ]
 }

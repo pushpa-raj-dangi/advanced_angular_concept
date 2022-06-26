@@ -1,0 +1,11 @@
+<div class="container">
+
+
+
+  <ul class="list-group p-3">
+    <li class="list-group-item" *ngFor="let item of (todos$ | async)">
+      {{item.name}}
+    </li>
+  </ul>
+
+</div>

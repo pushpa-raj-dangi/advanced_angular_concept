@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
-  user = { isAdmin: false };
+  user = { isAdmin: true };
 
   checkPersmission() {
     return of(this.user.isAdmin);

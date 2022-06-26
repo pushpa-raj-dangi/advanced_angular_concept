@@ -1,3 +1,7 @@
+import { SongAppComponent } from './songs/container/song-app/song-app.component';
+import { SongsModule } from './songs/songs.module';
+import { StoreExampleModule } from './store-example/store-example.module';
+import { StoreComponent } from './store-example/store/store.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthModule } from './auth/auth.module';
 import { Routes, RouterModule } from '@angular/router';
@@ -18,9 +22,17 @@ import { ExampleThreeComponent } from './example-three/example-three.component';
 import { CreditCardDirective } from './directives/credit-card.directive';
 import { ToolTipDirective } from './directives/tool-tip.directive';
 import { MyForDirective } from './directives/my-for.directive';
-import { AuthService } from './auth/auth.service';
 
 export const ROUTES: Routes = [
+  {
+    path: 'store',
+    component: StoreComponent,
+  },
+  {
+    path: 'songs',
+    component: SongAppComponent,
+  },
+
   {
     path: 'dashboard',
     canLoad: [AuthGuard],
@@ -53,6 +65,8 @@ export const ROUTES: Routes = [
     StockInventoryModule,
     MailModule,
     AuthModule,
+    StoreExampleModule,
+    SongsModule,
     RouterModule.forRoot(ROUTES),
   ],
   entryComponents: [AuthFormComponent],
